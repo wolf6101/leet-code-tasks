@@ -17,7 +17,7 @@ describe('twoNumberSum brute force', () => {
         expect(twoNumberSum1(arr, sum).sort()).toEqual(expected.sort());
     });
 
-    test('big input 10,000,000', () => {
+    test.skip('big input 10,000,000', () => {
         let heavyArr = utils.range(0, 10000000, 1);
         heavyArr.push(-10000000);
         expect(twoNumberSum1(heavyArr, 0).sort()).toEqual([-10000000, 10000000].sort());
@@ -29,7 +29,7 @@ describe('twoNumberSum sorted array two pointers traversal based', () => {
         expect(twoNumberSum2(arr, sum).sort()).toEqual(expected.sort());
     });
 
-    test('big input 10,000,000', () => {
+    test.skip('big input 10,000,000', () => {
         let heavyArr = utils.range(0, 10000000, 1);
         heavyArr.push(-10000000);
         expect(twoNumberSum2(heavyArr, 0).sort()).toEqual([-10000000, 10000000].sort());
@@ -41,7 +41,7 @@ describe('twoNumberSum hash table based', () => {
         expect(twoNumberSum3(arr, sum).sort()).toEqual(expected.sort());
     });
 
-    test('big input 10,000,000', () => {
+    test.skip('big input 10,000,000', () => {
         let heavyArr = utils.range(0, 10000000, 1);
         heavyArr.push(-10000000);
         expect(twoNumberSum3(heavyArr, 0).sort()).toEqual([-10000000, 10000000].sort());
