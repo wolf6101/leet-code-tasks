@@ -37,7 +37,7 @@ function getClosestNum(arr, num) {
         let currentDif = Math.abs(arr[mid] - num);
 
         if (arr[mid] < num) {
-            if (mid == arr.length - 1) // if last element in array - we cant calculate next dif
+            if (mid == arr.length - 1) // if last element in array - we cant calculate next dif and this is already the closest
                 return arr[mid];
 
             let nextDif = Math.abs(arr[mid + 1] - num);
@@ -48,7 +48,7 @@ function getClosestNum(arr, num) {
                 left = mid + 1;
             }
         } else if (arr[mid] > num) {
-            if (mid === 0) // if first element in array - we cant calculate prev dif
+            if (mid === 0) // if first element in array - we cant calculate next dif and this is already the closest
                 return arr[mid];
             
             let nextDif = Math.abs(arr[mid - 1] - num);
