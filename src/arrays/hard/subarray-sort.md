@@ -14,7 +14,7 @@ array = [1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19]
 [3, 9]
 ```
 
-### 2 passes implementation o(n) T, o(1) S
+## 2 passes implementation o(n) T, o(1) S
 This approach based on two passes:
 1. Pass 1:
    1. Finding first element which is less than previous -> setting its value to `start of subarray`
@@ -48,7 +48,7 @@ This approach based on two passes:
 4. Didn't took into account max value, for case like [[4, _8_, 7, 12, 11, 9, -1, 3, 9, 16, -15, _11_, 57], [0, 11]], array[subArrStart - 1] equals to 8, and everything after were compared to 8, but had to take into account max subArr value. If compare only with min value - element _11_ looks like in the proper place, but as far as its value is less than subArrayMax element -> this element also should be reordered.
 
 
-### 3 passes implementation o(n) T, o(1) S
+## 3 passes implementation o(n) T, o(1) S
 
 1. Pass 1:
    1. Check if current element is out of order (larger than previous, less than next, remembering edge cases for 0 and last elements of an array), if so -> update `smallest element in subarray` and `biggest element in subarray`

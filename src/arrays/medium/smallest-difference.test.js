@@ -1,4 +1,4 @@
-const utils = require('../../../utils');
+const utils = require('../../utils');
 const smallestDifference1 = require('./smallest-difference-1');
 const smallestDifference2 = require('./smallest-difference-2');
 
