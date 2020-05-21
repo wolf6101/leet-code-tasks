@@ -17,30 +17,40 @@ arrayTwo = [26, 134, 135, 15, 17]
 ```
 
 ## 1. Binary Search based implementation **o((n + k)\*log(k)) T, o(1) S**  
-    1. Sort second array -> o(n*log(n))
-    2. Store `smallest difference` in variable
-       Store `smallest pair` in variable
-    3. Loop through every element of first array **o(n)**
-        1. For each element get the closest element by its value in second array using `Get Closest Element (array, targetNum)`(binary search algorithm modification)
-        2. IF `current difference` < `smallest difference` -> update `smallest difference` and `smallest pair`
+1. Sort second array -> o(n*log(n))
+2. Store `smallest difference` in variable
+    Store `smallest pair` in variable
+3. Loop through every element of first array **o(n)**
+    1. For each element get the closest element by its value in second array using `GetClosestElement(array, targetNum)`(binary search algorithm modification)
+    2. IF `current difference` < `smallest difference` -> update `smallest difference` and `smallest pair`
 
-    `Get Closest Element (array, targetNum)` **o(log(n))** (Binary search algorithm modification)
-    1. Store left and right pointers in variables
-    2. WHILE left <= right  
-        1. Calculate mid = left + (left - right) / 2    
-        2. IF left == right -> return array[mid]  
-        3. IF array[mid] < targetNum  
-            * 1. IF |targetNum - array[mid]| < |targetNum - array[mid + 1]| -> return array[mid]  
-               ELSE left = mid + 1  
-        4. IF array[mid] > targetNum  
-            * 2. IF |targetNum - array[mid]| < |targetNum - array[mid - 1]| -> return array[mid]  
-               ELSE right = mid - 1  
-        5. IF array[mid] == targetNum -> return array[mid]  
+`GetClosestElement(array, targetNum)` **o(log(n))** (Binary search algorithm modification)
+1. Store left and right pointers in variables
+2. WHILE left <= right  
+    1. Calculate mid = left + (left - right) / 2    
+    2. IF left == right -> return array[mid]  
+    3. IF array[mid] < targetNum  
+        * 1. IF |targetNum - array[mid]| < |targetNum - array[mid + 1]| -> return array[mid]  
+            ELSE left = mid + 1  
+    4. IF array[mid] > targetNum  
+        * 2. IF |targetNum - array[mid]| < |targetNum - array[mid - 1]| -> return array[mid]  
+            ELSE right = mid - 1  
+    5. IF array[mid] == targetNum -> return array[mid]  
 
-        * Should be checked if `mid - 1` or `mid + 1` is not out of range,  
-        * IF mid is 0 or last element -> return array[mid] - as this is already the closest element
-       END WHILE
+    * Should be checked if `mid - 1` or `mid + 1` is not out of range,  
+    * IF mid is 0 or last element -> return array[mid] - as this is already the closest element
+    END WHILE
 
 ## 2. Two pointers based implementation **o(n\*log(n) + k\*log(k)) T, o(1) S**
-    1. Sort array1, sort array2 -> o(n*log(n) + k*log(k))
-    2. 
+
+  1. Sort array1, sort array2 -> **o(n*log(n) + k*log(k))**
+  2. Declare `idx1 = 0`, `idx2 = 0`
+  3. Declare `smallestDif` = INFINITY
+  4. Declare `pair = []`
+  5. WHILE `idx1` < `arrayOne.length` AND `idx2 < arrayTwo.length`
+     1. Declare `currentDif` = |arrayOne[idx1] - arrayTwo[idx2]|
+     2. IF `currentDif` < `smallestDif` -> `smallestDif` = `currentDif` and `pair` = [arrayOne[idx1], arrayTwo[idx2]]
+     3. IF `arrayOne[idx1]` < `arrayTwo[idx2]` -> `idx1++`
+     4. IF `arrayOne[idx1]` > `arrayTwo[idx2]` -> `idx2++`
+     5. IF `arrayOne[idx1]` == `arrayTwo[idx2]` -> return `[arrayOne[idx1], arrayTwo[idx2]]`
+  6. END WHILE **o(n + m)**

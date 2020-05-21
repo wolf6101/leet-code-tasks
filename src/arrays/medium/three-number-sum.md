@@ -34,11 +34,11 @@ getTwoNumberSum(inputArray, targetSum, startIndex) **o(n) T, o(n) S**
    2. Push current element to `hash table`
 4. Return `resultPairs`
 
-## Two Pointers based implementation
+## Two Pointers based implementation o(n^2) T, o(1) S
 
 1. Sort input array in place **o(n*log(n))**
 2. Store array for `result triplets`
-3. Loop through input array from beginning, for each element:
+3. Loop through input array from beginning, for each element: **o(n)**
    1. `startIndex` = current index + 1 
    2. `remainingSum` = `target sum` - `current element`
    3. Call `getTwoNumberSumPointers(inputArray, remainingSum, startIndex)` to check if there is a two number sum in the input array for `target sum` - `current element`
