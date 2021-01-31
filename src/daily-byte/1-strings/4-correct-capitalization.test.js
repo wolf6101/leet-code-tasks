@@ -1,4 +1,4 @@
-const isCorrectCapitalization = require("./4-correct-capitalization");
+const isCorrectCapitalization = require('./4-correct-capitalization');
 
 const testData = [
     ['USA', true],

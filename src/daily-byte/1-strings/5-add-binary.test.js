@@ -1,4 +1,4 @@
-const addBinary = require("./5-add-binary");
+const addBinary = require('./5-add-binary');
 
 const testData = [
     ['100', '1', '101'],
