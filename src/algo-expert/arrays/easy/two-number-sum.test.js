@@ -1,4 +1,4 @@
-const utils = require('../../utils');
+const utils = require('../../../utils');
 const twoNumberSum1 = require('./two-number-sum-1');
 const twoNumberSum2 = require('./two-number-sum-2');
 const twoNumberSum3 = require('./two-number-sum-3');

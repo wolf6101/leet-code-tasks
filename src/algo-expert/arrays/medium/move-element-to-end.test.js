@@ -1,4 +1,4 @@
-const utils = require('../../utils');
+const utils = require('./../../../utils');
 const moveElementToEnd1 = require('./move-element-to-end');
 
 const testData = [
