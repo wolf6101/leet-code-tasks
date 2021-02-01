@@ -1,3 +1,4 @@
+// O(N*LogN) T, O(N) S, where N - number of distinct numbers
 function getTopKFrequentElementsInArray(arr, k) {
     const map = new Map();
     
