@@ -1,4 +1,4 @@
-const Node = require('./linked-list-node');
+const Node = require('./data-structures/linked-list/linked-list-node');
 
 const range = (start, stop, step) => {
     return Array.from(
