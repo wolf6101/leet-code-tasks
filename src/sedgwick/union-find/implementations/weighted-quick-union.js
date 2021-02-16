@@ -1,9 +1,14 @@
-class QuickUnion {
+const QuickUnion = require('./quick-union');
+
+class WeightedQuickUnion extends QuickUnion {
     constructor(size) {
-        this.arr = [];
+        // not perfect as we can initialize in single loop, but for the sake of this example - inheritance
+        // will make it clearer how these 2 classes differ from each other
+        super(size);
+
         this.sizes = [];
+
         for (let i = 0; i < size; i++) {
-            this.arr[i] = i;
             this.sizes[i] = 1;
         }
     }
@@ -23,35 +28,6 @@ class QuickUnion {
             }
         }
     }
-    
-    // O(N) T | O(1) S
-    isConnected(p, q) {
-        const pRoot = this.getRoot(p);
-        const qRoot = this.getRoot(q);
-
-        return pRoot === qRoot;
-    }
-
-    // O(N) T | O(1) S
-    getRoot(i) {
-        while (this.arr[i] !== i) {
-            i = this.arr[i];
-        }
-
-        return i;
-    }
-
-    // O(N) T | O(1) S
-    getNumberOfComponents() {
-        let count = 0;
-        for (let i = 0; i < this.arr.length; i++) {
-            if (this.arr[i] === i) {
-                count++;
-            }
-        }
-
-        return count;
-    }
 }
 
-module.exports = QuickUnion;
+module.exports = WeightedQuickUnion;

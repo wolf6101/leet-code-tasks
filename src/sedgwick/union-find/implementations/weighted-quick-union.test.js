@@ -1,8 +1,8 @@
-const QuickUnion = require('./weighted-quick-union');
+const WeightedQuickUnion = require('./weighted-quick-union');
 
 describe('weighted quick union', () => {
     test('check connect 10', () => {
-        const qu = new QuickUnion(10);
+        const qu = new WeightedQuickUnion(10);
         expect(qu.arr).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
         expect(qu.sizes).toEqual([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
 
@@ -36,7 +36,7 @@ describe('weighted quick union', () => {
     })
 
     test('check isConnected 10', () => {
-        const qu = new QuickUnion(10);
+        const qu = new WeightedQuickUnion(10);
         qu.connect(4, 3);
         qu.connect(3, 8);
         qu.connect(6, 5);
