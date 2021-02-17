@@ -2,7 +2,6 @@ const WeightedQuickUnionWithPathCompression = require('./weighted-quick-union-wi
 
 describe('weighted quick union with path compression', () => {
     test('check connect 10', () => {
-        // todo: to implement
         const qu = new WeightedQuickUnionWithPathCompression(10);
         expect(qu.arr).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
         expect(qu.sizes).toEqual([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
