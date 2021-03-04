@@ -45,3 +45,4 @@ function swap (arr, i, j) {
 }
 
 // @lc code=end
+module.exports = sortArrayByParityII;
