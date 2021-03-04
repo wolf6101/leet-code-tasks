@@ -9,6 +9,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
+// O(N) T, O(1) S
 var sortArrayByParityII = function (nums) {
     const unsortedOddsIdxs = [];
     const unsortedEvensIdxs = [];
