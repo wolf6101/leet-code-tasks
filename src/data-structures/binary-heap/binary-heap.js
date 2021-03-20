@@ -34,9 +34,13 @@ class BinaryHeap {
         return top;
     }
 
-    sink() {}
+    sink() {
+        throw Error('Not Implemented Exception');
+    }
 
-    swim() {}
+    swim() {
+        throw Error('Not Implemented Exception');
+    }
 
     peek() {
         return this.arr[0];
