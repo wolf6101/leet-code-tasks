@@ -1,4 +1,5 @@
 const sort = require('./heap-sort');
+const sortReverse = require('./heap-sort-reversed');
 
 const testData = [
     [[1, 3, 8, 2], [1, 2, 3, 8]],
@@ -10,5 +11,11 @@ const testData = [
 describe('heap-sort', () => {
     test.each(testData)('(%s) -> %s', (arr, expected) => {
         expect(sort(arr)).toEqual(expected);
+    })
+});
+
+describe('heap-sort-reversed', () => {
+    test.each(testData)('(%s) -> %s', (arr, expected) => {
+        expect(sortReverse(arr)).toEqual(expected.reverse());
     })
 });
